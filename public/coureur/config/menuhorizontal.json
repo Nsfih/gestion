@@ -1,0 +1,17 @@
+[
+  {
+    "label": "\uD83D\uDCCB Liste",
+    "href": "/coureur/liste",
+    "title": "Tableau des categories"
+  },
+  {
+    "label": "➕ Ajout",
+    "href": "/coureur/ajout",
+    "title": "Ajouter une coureur"
+  },
+  {
+    "label": "✏\uFE0F Maj",
+    "href": "/coureur/maj",
+    "title": "Mettre à jour une coureur"
+  }
+]

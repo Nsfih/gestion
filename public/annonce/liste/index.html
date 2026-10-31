@@ -1,0 +1,34 @@
+<div class="page-card">
+    <header class="page-header">
+        <div class="page-header-top">
+            <h1 class="page-title">
+                Courses annoncées pour la saison en cours
+            </h1>
+            <div class="page-header-actions">
+                <label for="filtreMois" class="visually-hidden">
+                    Filtrer les courses par mois
+                </label>
+                <select id="filtreMois" class="course-filtre">
+                    <option value="0">
+                        Tous les mois
+                    </option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <div class="page-body">
+        <div id="lesCartes" aria-live="polite"></div>
+    </div>
+</div>
+
+<template id="courseTemplate">
+    <article class="course-carte">
+        <header class="course-entete">
+            <p class="course-date"></p>
+            <h2 class="course-nom"></h2>
+        </header>
+        <div class="course-corps">
+            <div class="course-description"></div>
+        </div>
+    </article>
+</template>

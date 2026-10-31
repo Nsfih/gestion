@@ -1,0 +1,17 @@
+[
+  {
+    "label": "\uD83D\uDCCB Liste",
+    "href": "/annonce/liste",
+    "title": "Tableau des annonces"
+  },
+  {
+    "label": "➕ Ajout",
+    "href": "/annonce/ajout",
+    "title": "Ajouter une annonce"
+  },
+  {
+    "label": "✏\uFE0F Maj",
+    "href": "/annonce/maj",
+    "title": "Mettre à jour une annonce"
+  }
+]

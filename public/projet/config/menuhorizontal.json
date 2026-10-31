@@ -1,0 +1,17 @@
+[
+  {
+    "label": "\uD83D\uDCCB Liste",
+    "href": "/projet/liste",
+    "title": "Liste des projets"
+  },
+  {
+    "label": "➕ Ajout",
+    "href": "/projet/ajout",
+    "title": "Ajouter un projet"
+  },
+  {
+    "label": "✏\uFE0F Maj",
+    "href": "/projet/maj",
+    "title": "Mettre à jour les compétences d'un projet"
+  }
+]

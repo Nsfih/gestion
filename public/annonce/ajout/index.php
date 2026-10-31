@@ -1,0 +1,15 @@
+<?php
+declare(strict_types=1);
+
+use ClasseTechnique\Page;
+
+/** @noinspection PhpIncludeInspection */
+require $_SERVER['DOCUMENT_ROOT'] . "/../bootstrap/bootstrap.php";
+
+// alimentation et affichage de l'interface
+// chargement des catégories et du composant assurant la génération d'un document PDF à partir de la page HTML
+$page = new Page();
+$page->setTitre("Ajout d'une annonce")
+    ->avecJeton()
+    ->addScript("/composant/tinymce/tinymce.min.js")
+    ->afficher();

@@ -1,0 +1,144 @@
+<link rel="stylesheet" href="/css/recherche.css">
+<link rel="stylesheet" href="/css/autocomplete.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.10/dist/autoComplete.min.js"></script>
+
+<div class="page-card">
+    <header class="page-header">
+        <div class="page-header-top">
+            <h1 class="page-title">
+                Rechercher un coureur à partir de son nom
+            </h1>
+        </div>
+
+        <div class="page-header-filters">
+            <div class="zone-recherche recherche-autocomplete">
+                <label for="search">
+                    Nom du licencié
+                </label>
+                <div class="champ-recherche">
+                    <div class="input-recherche">
+                        <div class="autoComplete_wrapper">
+                            <input
+                                    id="search"
+                                    type="text"
+                                    placeholder="Saisir les premières lettres du nom"
+                                    autocomplete="off">
+                        </div>
+                        <span class="icone-recherche" aria-hidden="true">⌕</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-body">
+
+
+        <div class="formulaire" id="formulaire">
+
+            <div id="msg"></div>
+
+            <div id="zoneSaisie" style="visibility: hidden">
+
+                <div class="zone-informations-formulaire">
+
+                    <section class="bloc-info">
+                        <h2>👤 Identité</h2>
+                        <div class="champ">
+                            <span>Nom</span>
+                            <input
+                                    id="nom"
+                                    type="text"
+                                    required
+                                    pattern="^[A-Za-z]( ?[A-Za-z])*$"
+                                    maxlength="30"
+                                    minlength="3">
+                        </div>
+                        <div class="champ">
+                            <span>Prénom</span>
+                            <input
+                                    id="prenom"
+                                    type="text"
+                                    required
+                                    pattern="^[A-Za-z]( ?[A-Za-z])*$"
+                                    maxlength="30"
+                                    minlength="3">
+                        </div>
+                        <div class="champ">
+                            <span>Sexe</span>
+                            <select id="sexe">
+                                <option value="M">Homme</option>
+                                <option value="F">Femme</option>
+                            </select>
+                        </div>
+
+                        <div class="champ">
+                            <span>Né(e) le</span>
+                            <input
+                                    id="dateNaissance"
+                                    type="date"
+                                    required>
+                        </div>
+
+                        <div class="champ">
+                            <span>Adresse mail</span>
+                            <input id="email" type="email">
+                        </div>
+
+                        <div class="champ">
+                            <span>Téléphone</span>
+                            <input
+                                    id="telephone"
+                                    type="text"
+                                    pattern="^0(6|7)[0-9]{8}$"
+                                    maxlength="10"
+                                    minlength="10">
+                        </div>
+
+                    </section>
+                    <section class="bloc-info">
+                        <h2>🏆 Informations sportives</h2>
+                        <div class="champ">
+                            <span>Licence</span>
+                            <output
+                                    id="licence"
+                                    class="champ-sortie">
+                            </output>
+                        </div>
+                        <div class="champ">
+                            <span>Catégorie</span>
+                            <output
+                                    id="idCategorie"
+                                    class="champ-sortie">
+                            </output>
+
+                        </div>
+                        <div class="champ">
+                            <span>Club</span>
+                            <select id="idClub"></select>
+                        </div>
+
+                        <div class="ligne-checkbox">
+                            <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="ffa">
+                            <label for="ffa">
+                                Validé par le Web Service de la FFA
+                            </label>
+                        </div>
+                    </section>
+                </div>
+                <div class="d-flex align-items-center gap-2 mt-3">
+                    <button id="btnModifier" class="w-100 btn btn-outline-danger">
+                        Modifier
+                    </button>
+                    <button id="btnSupprimer" class="w-100 btn btn-outline-danger">
+                        Supprimer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

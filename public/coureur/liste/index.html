@@ -1,0 +1,268 @@
+<style>
+    .coureur-count {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        flex: 0 0 auto;
+        margin: 0;
+        padding: .45rem .85rem;
+        background: rgba(255, 255, 255, .15);
+        border: 1px solid rgba(255, 255, 255, .25);
+        border-radius: 999px;
+        color: #fff;
+        font-size: .95rem;
+        white-space: nowrap;
+    }
+
+    .coureur-count-label {
+        color: #fff;
+        font-size: .9rem;
+        font-weight: 600;
+    }
+
+    .coureur-count-value {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.5rem;
+        height: 2rem;
+        padding: 0 .6rem;
+        background: rgba(255, 255, 255, .25);
+        border-radius: 6px;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+
+    /* =========================================================
+       TABLEAUX DE COUREURS
+       ========================================================= */
+
+    .coureur-table-wrapper {
+        width: 100%;
+
+        border-top: 1px solid #edf2f8;
+
+        max-height: 72vh;
+
+        overflow: auto;
+
+        align-content: flex-start;
+    }
+
+
+    .coureur-table {
+        width: 100%;
+
+        margin-bottom: 0;
+
+        border-collapse: collapse;
+    }
+
+
+    .coureur-table thead th {
+        position: sticky;
+
+        top: 0;
+
+        z-index: 3;
+
+        padding: 10px 12px;
+
+        background: #0f7df5;
+
+        color: #fff;
+
+        font-weight: 600;
+
+        white-space: nowrap;
+
+        border-bottom: 0;
+    }
+
+
+    .coureur-table tbody td {
+        padding: 10px 12px;
+
+        border-top: 1px solid #edf2f8;
+
+        color: #2c3e50;
+    }
+
+
+    .coureur-table tbody tr:nth-child(even) td {
+        background-color: #f8fbff;
+    }
+
+
+    .coureur-table tbody tr:hover td {
+        background-color: #eaf3ff;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media screen and (max-width: 768px) {
+
+        .page-card .page-body:has(.bloc-info) {
+            grid-template-columns: 1fr;
+        }
+
+
+        .coureur-count {
+            align-self: flex-start;
+        }
+
+
+        .coureur-table th:nth-child(3),
+        .coureur-table td:nth-child(3),
+        .coureur-table th:nth-child(4),
+        .coureur-table td:nth-child(4),
+        .coureur-table th:nth-child(5),
+        .coureur-table td:nth-child(5),
+        .coureur-table th:nth-child(6),
+        .coureur-table td:nth-child(6),
+        .coureur-table th:nth-child(7),
+        .coureur-table td:nth-child(7),
+        .coureur-table th:nth-child(8),
+        .coureur-table td:nth-child(8),
+        .coureur-table th:nth-child(9),
+        .coureur-table td:nth-child(9)
+        {
+            display: none;
+        }
+
+
+        .coureur-table tbody tr {
+            position: relative;
+
+            cursor: pointer;
+        }
+
+
+        .coureur-table tbody tr:hover::after {
+            content: attr(data-details);
+
+            position: absolute;
+
+            left: 5%;
+            top: 100%;
+
+            z-index: 10;
+
+            width: 90%;
+
+            padding: 10px 14px;
+
+            background-color: #1e293b;
+
+            color: #ffffff;
+
+            font-size: .85rem;
+
+            line-height: 1.5;
+
+            border-radius: 8px;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+
+            white-space: pre-wrap;
+
+            pointer-events: none;
+        }
+</style>
+<link rel="stylesheet" href="/css/recherche.css">
+
+
+
+<div class="page-card">
+    <header class="page-header">
+        <div class="page-header-top">
+            <h1 class="page-title">
+                Liste des coureurs
+            </h1>
+            <div class="page-header-actions">
+                <p class="coureur-count">
+                    <span class="coureur-count-label">
+                        Nombre de coureurs :
+                    </span>
+                    <span id="nb" class="coureur-count-value"></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="page-header-filters">
+            <div class="zone-recherche">
+                <label for="search">
+                    Licence, nom ou club
+                </label>
+                <div class="champ-recherche">
+                    <div class="input-recherche">
+                        <input
+                                type="text"
+                                id="search"
+                                placeholder="Licence, nom ou club..."
+                                pattern="[A-Za-z0-9 -]+"
+                                autocomplete="off">
+                        <span class="icone-recherche" aria-hidden="true"> ⌕ </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-body">
+        <div class="table-responsive-sm coureur-table-wrapper">
+            <table id="leTableau" class="coureur-table">
+                <thead>
+                <tr>
+                    <th
+                            data-champ="licence"
+                            data-type="text"
+                            style="width: 130px; text-align: center;">
+                        Licence
+                    </th>
+                    <th
+                            data-champ="nomPrenom"
+                            data-type="text"
+                            style="width: 350px; text-align: left;">
+                        Nom prénom
+                    </th>
+                    <th
+                            data-champ="sexe"
+                            data-type="text"
+                            style="width: 80px; text-align: center;">
+                        Sexe
+                    </th>
+                    <th
+                            data-champ="dateNaissanceFr"
+                            data-type="date"
+                            style="width: 160px; text-align: center;">
+                        Né(e) le
+                    </th>
+                    <th
+                            data-champ="idCategorie"
+                            data-type="text"
+                            style="width: 100px; text-align: center;">
+                        Cat.
+                    </th>
+                    <th
+                            data-champ="nomClub"
+                            data-type="text"
+                            style="width: 350px; text-align: left;">
+                        Club
+                    </th>
+                    <th>FFA</th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+
+                </tr>
+                </thead>
+                <tbody id="lesLignes"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

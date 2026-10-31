@@ -1,0 +1,68 @@
+<div class="page-card">
+    <div class="page-header">
+        <div class="page-header-top">
+            <h1 class="page-title">
+                Modification ou suppression d'une catégorie
+            </h1>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="formulaire" id="formulaire">
+            <div id="msg"></div>
+
+            <label for="idR" class="mb-0">Sélectionner la catégorie</label>
+            <select id="idR" style="width: 300px"></select>
+            <div id="nb" style="font-size: 0.75rem; font-style: italic; transform: translateY(-10px);"></div>
+
+            <div class="zone-informations-formulaire">
+                <section class="bloc-info">
+                    <h2>🆔 Identité</h2>
+                    <div class="champ">
+                        <label for="nom" class="obligatoire">
+                            Nom
+                            <span class="commentaire">(5 à 20 caractères, lettres non accentuées avec 1 ou 2 chiffres à la fin)</span>
+                        </label>
+                        <input id="nom"
+                               type="text"
+                               required
+                               pattern="^[A-Za-z]+(?: [A-Za-z]+)*(?: \d{1,2})?$"
+                               minlength="5"
+                               maxlength="20">
+                    </div>
+                </section>
+                <section class="bloc-info">
+                    <h2>📊 Tranche d'âge</h2>
+                    <div class="champ">
+                        <label for="ageMin" class="obligatoire">
+                            Âge minimum
+                        </label>
+                        <input id="ageMin"
+                               type="number"
+                               required
+                               min="4"
+                               max="99">
+                    </div>
+                    <div class="champ">
+                        <label for="ageMax" class="obligatoire">
+                            Âge maximum
+                        </label>
+                        <input id="ageMax"
+                               type="number"
+                               required
+                               min="4"
+                               max="99">
+                    </div>
+                </section>
+            </div>
+
+            <div class="d-flex align-items-center gap-2 mt-3">
+                <button id="btnModifier" class="w-100 btn btn-outline-danger">
+                    Modifier
+                </button>
+                <button id="btnSupprimer" class="w-100 btn btn-outline-danger">
+                    Supprimer
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

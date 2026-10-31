@@ -1,0 +1,37 @@
+<div class="page-card">
+    <div class="page-header">
+        <div class="page-header-top">
+            <h1 class="page-title">
+                Ajout d'une annonce
+            </h1>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="formulaire">
+            <div id="msg"></div>
+            <!-- Date -->
+            <label for="date" class="obligatoire" title="Date de l'épreuve">Date </label>
+            <input id="date"
+                   type="date"
+                   required>
+            <!-- Nom -->
+            <label for="nom" class="obligatoire">Nom </label>
+            <input id="nom"
+                   type="text"
+                   required
+                   placeholder="Nom de l'épreuve"
+                   title="Au moins 8 caractères"
+                   pattern="^[A-Za-z0-9ÀÂÆÇÈÉÊËÎÏÔŒÙÛÜŸàâæçèéêëîïôœùûüÿ]+([ '-]?[A-Za-z0-9ÀÂÆÇÈÉÊËÎÏÔŒÙÛÜŸàâæçèéêëîïôœùûüÿ]+)*$"
+                   minlength="8"
+                   maxlength="100">
+            <!-- Description -->
+            <label for="description" class="obligatoire">Description de l'épreuve</label>
+            <textarea id="description" required></textarea>
+
+            <!-- Bouton -->
+            <div class="d-flex justify-content-evenly">
+                <button id="btnAjouter" class="w-100 btn btn-sm btn-outline-danger mt-3">✚ Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>

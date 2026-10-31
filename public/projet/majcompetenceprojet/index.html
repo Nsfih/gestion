@@ -1,0 +1,54 @@
+<style>
+    .projet-selectionne {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+
+        margin: 0 0 1.25rem;
+        padding: .75rem 1rem;
+
+        background: #f8f9fa;
+        border: 1px solid #d6dde5;
+        border-left: 5px solid var(--entete-bg-end);
+        border-radius: 8px;
+    }
+
+    .projet-selectionne .projet-label {
+        color: #6c757d;
+        font-size: .95rem;
+        font-weight: 600;
+    }
+
+    .projet-selectionne .projet-nom {
+        color: var(--entete-bg-start);
+        font-size: 1.15rem;
+        font-weight: 700;
+    }
+
+    @media screen and (max-width: 480px) {
+        .projet-selectionne {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: .15rem;
+        }
+    }
+</style>
+
+<div class="page-card">
+    <div class="page-header">
+        <div class="page-header-top">
+            <h1 class="page-title">
+                Mise à jour des compétences associées à un projet
+            </h1>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="projet-selectionne">
+            <span class="projet-label">
+                Projet :
+            </span>
+            <span id="nom" class="projet-nom"></span>
+        </div>
+        <div id="listeCompetence"></div>
+    </div>
+</div>

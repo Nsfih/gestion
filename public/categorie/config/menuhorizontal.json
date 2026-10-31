@@ -1,0 +1,17 @@
+[
+  {
+    "label": "\uD83D\uDCCB Liste",
+    "href": "/categorie/liste",
+    "title": "Tableau des categories"
+  },
+  {
+    "label": "➕ Ajout",
+    "href": "/categorie/ajout",
+    "title": "Ajouter une categorie"
+  },
+  {
+    "label": "✏\uFE0F Maj",
+    "href": "/categorie/maj",
+    "title": "Mettre à jour une categorie"
+  }
+]

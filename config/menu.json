@@ -1,0 +1,26 @@
+{
+  "brand": {
+    "label": "Gestion des données",
+    "href": "/",
+    "icon": "/css/logo.png"
+  },
+  "items": [
+    {
+      "label": "Catégorie",
+      "href": "/categorie/liste"
+    },
+    {
+      "label": "Coureur",
+      "href": "/coureur/liste"
+    },
+    {
+      "label": "Annonce",
+      "href": "/annonce/liste"
+    },
+    {
+      "label": "Projet",
+      "href": "/projet/liste"
+    }
+  ]
+}
+
